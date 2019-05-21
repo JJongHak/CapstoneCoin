@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id = "@+id/linerCS"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="394dp"
+        android:layout_height="96dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="9dp"
+        >
+        <TextView
+            android:text="ㅇㅇㅇ님 환영합니다."
+            android:layout_width="239dp"
+            android:layout_height="36dp"
+            android:id="@+id/textView3"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            />
+        <Button
+            android:text="로그아웃"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/logout_bt"
+            android:layout_weight="1"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="3dp"
+            android:onClick = "logout"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="394dp"
+        android:layout_height="96dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="9dp"
+        >
+        <EditText
+            android:layout_width="239dp"
+            android:layout_height="57dp"
+            android:inputType="textPersonName"
+            android:text="기업명 / 키워드"
+            android:ems="10"
+            android:id="@+id/editText6"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            />
+        <Button
+            android:text="검 색"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button6"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="3dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="149dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="연봉순" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="규모순" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="17dp"
+                android:layout_weight="1"
+                android:text="인기순"
+
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/domain"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:gravity="center_horizontal"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="340dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/company_list"
+            />
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="해외기업조회"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button14"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="10dp"
+            />
+        <Button
+            android:text="즐겨찾기목록"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button13"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <Button
+            android:text="종 료"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button12"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="17dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
+

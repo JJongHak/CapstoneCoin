@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="113dp">
+        <TextView
+            android:text="ㅇㅇㅇ님 환영합니다."
+            android:layout_width="239dp"
+            android:layout_height="36dp"
+            android:id="@+id/textView"
+            android:layout_weight="1"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            />
+        <Button
+            android:text="로그아웃"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/logout_bt"
+            android:layout_weight="1"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="17dp"
+            android:onClick = "logout"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="717dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="121dp">
+
+
+        <Button
+            android:id="@+id/search_us"
+            android:layout_width="300dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="35dp"
+            android:text="미    국"
+            android:textSize="35sp"
+            android:onClick = "onClick"/>
+
+        <Button
+            android:id="@+id/search_jp"
+            android:layout_width="300dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="35dp"
+            android:text="일    본"
+            android:textSize="35sp"
+            android:onClick = "onClick"/>
+
+        <Button
+            android:id="@+id/search_ch"
+            android:layout_width="300dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="35dp"
+            android:text="중    국"
+            android:textSize="35sp"
+            android:onClick = "onClick"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

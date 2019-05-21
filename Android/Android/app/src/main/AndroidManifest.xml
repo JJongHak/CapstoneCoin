@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.capstonedesign_mj">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Login_1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main_Menu_2"/>
+        <activity android:name=".Bookmark_Menu_3" />
+        <activity android:name=".External_Search_Menu_3" />
+        <activity android:name=".Local_Search_Menu_3" />
+        <activity android:name=".Company_List_4" />
+        <activity android:name=".Job_List_5" />
+    </application>
+
+
+</manifest>
