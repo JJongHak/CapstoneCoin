@@ -17,7 +17,7 @@ public class Bookmark_Menu_3 extends Activity {
         switch(view.getId())
         {
             case R.id.local_group:
-                // 국내 즐겨찾기 정보 전송
+                // 국내 즐겨찾기 정보 전송 12345
                 startActivity(intent);
                 break;
 
