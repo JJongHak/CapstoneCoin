@@ -1,0 +1,76 @@
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Server version:        Apache Tomcat/7.0.92
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Server built:          Nov 9 2018 11:07:44 UTC
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Server number:         7.0.92.0
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: OS Name:               Windows 10
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: OS Version:            10.0
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Architecture:          amd64
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Java Home:             C:\Program Files\Java\jdk1.8.0_201\jre
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: JVM Version:           1.8.0_201-b09
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: JVM Vendor:            Oracle Corporation
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: CATALINA_BASE:         I:\CapstoneDesign\Server\xampp\tomcat
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: CATALINA_HOME:         I:\CapstoneDesign\Server\xampp\tomcat
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Command line argument: -Djava.util.logging.config.file=I:\CapstoneDesign\Server\xampp\tomcat\conf\logging.properties
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Command line argument: -Dignore.endorsed.dirs=
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Command line argument: -Dcatalina.base=I:\CapstoneDesign\Server\xampp\tomcat
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Command line argument: -Dcatalina.home=I:\CapstoneDesign\Server\xampp\tomcat
+5월 04, 2019 9:52:42 오전 org.apache.catalina.startup.VersionLoggerListener log
+정보: Command line argument: -Djava.io.tmpdir=I:\CapstoneDesign\Server\xampp\tomcat\temp
+5월 04, 2019 9:52:42 오전 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+정보: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_201\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\libnvvp;C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Library\mingw-w64\bin;C:\ProgramData\Anaconda3\Library\usr\bin;C:\ProgramData\Anaconda3\Library\bin;C:\ProgramData\Anaconda3\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\Java\jdk1.8.0_201\bin;I:\CapstoneDesign\Server\xampp\mysql\bin\;C:\opencv\build\x64\vc14\bin;C:\Users\LJH\AppData\Local\Microsoft\WindowsApps;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2018.3.5\bin;C:\Users\LJH\AppData\Local\GitHubDesktop\bin;.
+5월 04, 2019 9:52:44 오전 org.apache.coyote.AbstractProtocol init
+정보: Initializing ProtocolHandler ["http-bio-8080"]
+5월 04, 2019 9:52:44 오전 org.apache.coyote.AbstractProtocol init
+정보: Initializing ProtocolHandler ["ajp-bio-8009"]
+5월 04, 2019 9:52:44 오전 org.apache.catalina.startup.Catalina load
+정보: Initialization processed in 2854 ms
+5월 04, 2019 9:52:44 오전 org.apache.catalina.core.StandardService startInternal
+정보: Starting service Catalina
+5월 04, 2019 9:52:44 오전 org.apache.catalina.core.StandardEngine startInternal
+정보: Starting Servlet Engine: Apache Tomcat/7.0.92
+5월 04, 2019 9:52:44 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deploying web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\docs
+5월 04, 2019 9:52:45 오전 org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+경고: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [102] milliseconds.
+5월 04, 2019 9:52:45 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deployment of web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\docs has finished in 636 ms
+5월 04, 2019 9:52:45 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deploying web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\examples
+5월 04, 2019 9:52:46 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deployment of web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\examples has finished in 1,275 ms
+5월 04, 2019 9:52:46 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deploying web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\host-manager
+5월 04, 2019 9:52:46 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deployment of web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\host-manager has finished in 79 ms
+5월 04, 2019 9:52:46 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deploying web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\manager
+5월 04, 2019 9:52:46 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deployment of web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\manager has finished in 74 ms
+5월 04, 2019 9:52:46 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deploying web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\ROOT
+5월 04, 2019 9:52:46 오전 org.apache.catalina.startup.HostConfig deployDirectory
+정보: Deployment of web application directory I:\CapstoneDesign\Server\xampp\tomcat\webapps\ROOT has finished in 50 ms
+5월 04, 2019 9:52:46 오전 org.apache.coyote.AbstractProtocol start
+정보: Starting ProtocolHandler ["http-bio-8080"]
+5월 04, 2019 9:52:46 오전 org.apache.coyote.AbstractProtocol start
+정보: Starting ProtocolHandler ["ajp-bio-8009"]
+5월 04, 2019 9:52:46 오전 org.apache.catalina.startup.Catalina start
+정보: Server startup in 2203 ms
