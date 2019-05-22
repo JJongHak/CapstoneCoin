@@ -122,7 +122,7 @@ public class Company_List_4 extends Activity {
             text_frame[i].addView(comp_name[i], name_param);
 
             comp_num[i] = new TextView(this);
-            comp_num[i].setText("분야"+i);
+            comp_num[i].setText("분야12345"+i);
             comp_num[i].setTextSize(20);
             text_frame[i].addView(comp_num[i], num_param);
 
