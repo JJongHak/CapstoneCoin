@@ -5,7 +5,7 @@ from selenium import webdriver
 import codecs
 import pymysql
 
-
+#12345
 def SS():
     conn = pymysql.connect(host='localhost', user='root', password='t13579',
                            db='dbclass', charset='utf8')
