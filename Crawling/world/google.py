@@ -4,8 +4,8 @@ from selenium import webdriver
 import codecs
 import pymysql
 
-f = codecs.open("C:/Users/gooni/Documents/캡스톤디자인/link.txt", encoding="utf-8",mode="w")
-driver = webdriver.Chrome("C:/Users/gooni/Documents/캡스톤디자인/chromedriver.exe")
+
+driver = webdriver.Chrome("C:/Users/gooni/Desktop/CapstoneCoin/Crawling/world/chromedriver.exe")
 
 
 def crawler(url):
