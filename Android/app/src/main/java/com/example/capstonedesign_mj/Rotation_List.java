@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class Rotation_List extends Activity {
 
 
@@ -20,7 +22,16 @@ public class Rotation_List extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.style_company);
 
+
         int cnt = 5;
+        int k[] = new int[cnt];
+        //랜덤
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        int date = cal.get ( cal.DATE ) ;
+        Random rand = new Random();
+        rand.setSeed(date);
+
+        //
         int image = R.drawable.noimage;
 
         final TextView rotation = (TextView)findViewById(R.id.rotation);
@@ -31,6 +42,7 @@ public class Rotation_List extends Activity {
         {
             case 1: case 2:
                 rotation.setText("금일의 국내 기업 로테이션");
+
                 break;
             case 3: case 4: case 5:
                 rotation.setText("금일의 해외 기업 로테이션");
@@ -104,8 +116,16 @@ public class Rotation_List extends Activity {
         final int test[] = {1,2,3,4,5};
 
         //기업 생성
-        for(int i=0;i<cnt;i++) {
+        for(int j=0;j<cnt;j++) {
+            //랜덤 번호 생성 및 중복 제거
+            int i = rand.nextInt(cnt);
 
+            for(int a = 0 ; a<j;a++){
+                if(k[a] == i){
+                    a=-1;
+                    i = rand.nextInt(cnt);
+                }
+            }
             final int position = i;
 
             comp_frame[i] = new LinearLayout(this);
@@ -173,6 +193,8 @@ public class Rotation_List extends Activity {
             comp_bookmark[i].setText("☆");
             comp_bookmark[i].setTextSize(30);
             comp_frame[i].addView(comp_bookmark[i], but_param);
+
+            k[j] = i;
         }
     }
     public int DtS(double DP){ //DP -> 픽셀 변환
