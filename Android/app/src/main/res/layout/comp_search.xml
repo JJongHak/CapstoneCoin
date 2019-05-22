@@ -89,7 +89,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="연봉순" />
+                android:text="분야순" />
 
             <Button
                 android:id="@+id/button8"
@@ -99,7 +99,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="규모순" />
+                android:text="지역순" />
 
             <Button
                 android:id="@+id/button9"
@@ -109,7 +109,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="17dp"
                 android:layout_weight="1"
-                android:text="인기순"
+                android:text="평균연봉순"
 
                 />
         </LinearLayout>
