@@ -22,6 +22,9 @@
         <activity android:name=".Local_Search_Menu_3" />
         <activity android:name=".Company_List_4" />
         <activity android:name=".Job_List_5" />
+        <activity android:name=".Rotation_List"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
+        />
     </application>
 
 
