@@ -4,8 +4,8 @@ from selenium import webdriver
 import codecs
 import pymysql
 
-f = codecs.open("C:/Users/gooni/Documents/캡스톤디자인/link.txt", encoding="utf-8",mode="w")
-driver = webdriver.Chrome("C:/Users/gooni/Documents/캡스톤디자인/chromedriver.exe")
+
+driver = webdriver.Chrome("C:/Users/gooni/Desktop/CapstoneCoin/Crawling/world/chromedriver.exe")
 
 
 def crawler(url):
@@ -39,7 +39,7 @@ def Google(url):
             curs.execute(sql)
     conn.commit()
 
-
+#12345
 urls = []
 url0 = "https://careers.google.com/jobs/results/?category=DATA_CENTER_OPERATIONS&category=DEVELOPER_RELATIONS&category=HARDWARE\
 _ENGINEERING&category=INFORMATION_TECHNOLOGY&category=MANUFACTURING_SUPPLY_CHAIN&category=NETWORK_ENGINEERING&category=PRODUCT\

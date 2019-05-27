@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 
 public class External_Search_Menu_3 extends Activity {
 
@@ -36,6 +37,7 @@ public class External_Search_Menu_3 extends Activity {
 
         }
     }
+
 
     public void logout(View view){
         Intent intent = new Intent(getApplicationContext(), Login_1.class);

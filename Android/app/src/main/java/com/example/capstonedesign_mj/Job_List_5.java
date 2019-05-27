@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,11 +20,11 @@ public class Job_List_5 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comp_view);
 
+        Intent intent = getIntent();
+        int code = intent.getExtras().getInt("code");
 
         //테스트 코드
         final TextView test = (TextView)findViewById(R.id.test);
-
-        Intent intent = getIntent();
 
         int test_num = intent.getExtras().getInt("test");
         test.setText(""+test_num+" 번 기업");
@@ -105,6 +106,36 @@ public class Job_List_5 extends Activity {
     public int DtS(float DP){ //DP -> 픽셀 변환
         float SP = DP*(getResources().getDisplayMetrics().density);
         return (int)SP;
+    }
+
+    public void Pop(View view){
+        Intent intent = getIntent();
+        final int code = intent.getExtras().getInt("code");
+
+        intent = new Intent(getApplicationContext(), Rotation_List.class);
+        switch(code)
+        {
+            case 1:
+                intent.putExtra("code",1);
+                startActivity(intent);
+                break;
+            case 2:
+                intent.putExtra("code",2);
+                startActivity(intent);
+                break;
+            case 3:
+                intent.putExtra("code",3);
+                startActivity(intent);
+                break;
+            case 4:
+                intent.putExtra("code",4);
+                startActivity(intent);
+                break;
+            case 5:
+                intent.putExtra("code",5);
+                startActivity(intent);
+                break;
+        }
     }
 
 }

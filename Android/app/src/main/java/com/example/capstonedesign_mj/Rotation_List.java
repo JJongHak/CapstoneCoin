@@ -1,60 +1,57 @@
 package com.example.capstonedesign_mj;
 
+
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.w3c.dom.Text;
-import java.util.zip.Inflater;
 
-public class Company_List_4 extends Activity {
+import java.util.Random;
 
-    protected void onCreate(Bundle savedInstanceState){
+public class Rotation_List extends Activity {
 
+
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.comp_search);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.style_company);
+
 
         int cnt = 5;
-        int image = R.drawable.noimage;
-        String Tag_Name = "Name";
-        String Tag_Num = "Num";
+        int k[] = new int[cnt];
+        //랜덤
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        int date = cal.get ( cal.DATE ) ;
+        Random rand = new Random();
+        rand.setSeed(date);
 
-        //어느나라 기업인지 보여주는 코드
-        final TextView domain = (TextView)findViewById(R.id.domain);
+        //
+        int image = R.drawable.noimage;
+
+        final TextView rotation = (TextView)findViewById(R.id.rotation);
         Intent intent = getIntent();
         final int code = intent.getExtras().getInt("code");
 
         switch(code)
         {
-            case 1:
-                domain.setText("<국내 100대 대기업 목록>");
+            case 1: case 2:
+                rotation.setText("금일의 국내 기업 로테이션");
+
                 break;
-            case 2:
-                domain.setText("<국내 400대 벤처기업 목록>");
-                break;
-            case 3:
-                domain.setText("<미국 100대 기업 목록>");
-                break;
-            case 4:
-                domain.setText("<일본 100대 기업 목록>");
-                break;
-            case 5:
-                domain.setText("<중국 100대 기업 목록>");
+            case 3: case 4: case 5:
+                rotation.setText("금일의 해외 기업 로테이션");
                 break;
         }
 
-        //기업 목록 생성
-        LinearLayout company_list = (LinearLayout)findViewById(R.id.company_list);
+
+
+        LinearLayout company_list = (LinearLayout)findViewById(R.id.list);
 
         //객체생성
         LinearLayout comp_frame[] = new LinearLayout[cnt];
@@ -119,9 +116,17 @@ public class Company_List_4 extends Activity {
         final int test[] = {1,2,3,4,5};
 
         //기업 생성
-       for(int i=0;i<cnt;i++) {
+        for(int j=0;j<cnt;j++) {
+            //랜덤 번호 생성 및 중복 제거
+            int i = rand.nextInt(cnt);
 
-           final int position = i;
+            for(int a = 0 ; a<j;a++){
+                if(k[a] == i){
+                    a=-1;
+                    i = rand.nextInt(cnt);
+                }
+            }
+            final int position = i;
 
             comp_frame[i] = new LinearLayout(this);
             comp_frame[i].setOrientation(LinearLayout.HORIZONTAL);
@@ -188,49 +193,12 @@ public class Company_List_4 extends Activity {
             comp_bookmark[i].setText("☆");
             comp_bookmark[i].setTextSize(30);
             comp_frame[i].addView(comp_bookmark[i], but_param);
+
+            k[j] = i;
         }
-
     }
-
-    public void logout(View view){
-        Intent intent = new Intent(getApplicationContext(), Login_1.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
-
     public int DtS(double DP){ //DP -> 픽셀 변환
         double SP = DP*(getResources().getDisplayMetrics().density);
         return (int)SP;
     }
-
-    public void Pop(View view){
-        Intent intent = getIntent();
-        final int code = intent.getExtras().getInt("code");
-
-       intent = new Intent(getApplicationContext(), Rotation_List.class);
-        switch(code)
-        {
-            case 1:
-                intent.putExtra("code",1);
-                startActivity(intent);
-                break;
-            case 2:
-                intent.putExtra("code",2);
-                startActivity(intent);
-                break;
-            case 3:
-                intent.putExtra("code",3);
-                startActivity(intent);
-                break;
-            case 4:
-                intent.putExtra("code",4);
-                startActivity(intent);
-                break;
-            case 5:
-                intent.putExtra("code",5);
-                startActivity(intent);
-                break;
-        }
-    }
-
 }
