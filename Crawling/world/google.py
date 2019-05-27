@@ -5,7 +5,7 @@ import codecs
 import pymysql
 
 
-driver = webdriver.Chrome("C:/Users/gooni/Desktop/CapstoneCoin/Crawling/world/chromedriver.exe")
+driver = webdriver.Chrome("C:/Users/LJH/Documents/GitHub/CapstoneCoin/Crawling/world/chromedriver.exe")
 
 
 def crawler(url):
@@ -15,7 +15,7 @@ def crawler(url):
     return s2
 
 def Google(url):
-    conn = pymysql.connect(host='localhost', user='root', password='Capstone123.',
+    conn = pymysql.connect(host='localhost', user='root',
                            db='capstone', charset='utf8')
     ss = crawler(url)
     s1 = ss.findAll("a", class_="gc-card")

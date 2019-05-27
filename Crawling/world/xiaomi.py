@@ -5,8 +5,8 @@ import time
 import codecs
 import pymysql
 
-f = codecs.open("C:/Users/gooni/Documents/캡스톤디자인/link.txt", encoding="utf-8",mode="w")
-driver = webdriver.Chrome("C:/Users/gooni/Desktop/CapstoneCoin/Crawling/world/chromedriver.exe")
+#f = codecs.open("C:/Users/gooni/Documents/캡스톤디자인/link.txt", encoding="utf-8",mode="w")
+driver = webdriver.Chrome("C:/Users/LJH/Documents/GitHub/CapstoneCoin/Crawling/world/chromedriver.exe")
 
 def crawler(url):
     driver.get(url)
@@ -15,7 +15,7 @@ def crawler(url):
     return s2
 
 def Xiaomi(url):
-    conn = pymysql.connect(host='localhost', user='root',  password='Capstone123.',
+    conn = pymysql.connect(host='localhost', user='root',
                            db='capstone', charset='utf8')
     s = crawler(url)
     ss = s.findAll("a", class_="link-11ZhH")
@@ -31,13 +31,13 @@ def Xiaomi(url):
         d = (s5.text)[5:]
         e = "http://job.hr.xiaomi.com/" + link
         curs = conn.cursor()
-        #sql = "INSERT INTO capstone.xiaomi_table values('"+a+"','"+b+"','"+c+"','"+d+"','"+e+"');"
-        sql = "INSERT INTO capstone.xiaomi_table (title, classify, type, data, link)\
-                        SELECT ('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "')\
-                        FROM DUAL \
-                        WHERE NOT EXISTS (SELECT title, data FROM capstone.xiaomi_table\
-                        WHERE capstone.xiaomi_table.title = " + a + " AND \
-                        capstone.xiaomi_table.date = " + c + " );"
+        sql = "INSERT INTO capstone.xiaomi_table(title, classify, type, date, link) values('"+a+"','"+b+"','"+c+"','"+d+"','"+e+"');"
+        #sql = "INSERT INTO capstone.xiaomi_table (title, classify, type, data, link)\
+         #               SELECT ('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "')\
+          #              FROM DUAL \
+           #             WHERE NOT EXISTS (SELECT title, data FROM capstone.xiaomi_table\
+            #            WHERE capstone.xiaomi_table.title = " + a + " AND \
+             #           capstone.xiaomi_table.date = " + c + " );"
         curs.execute(sql)
     conn.commit()
     print(1)
@@ -53,5 +53,5 @@ def Xiaomi(url):
 
 
 for i in range(1,2):
-    Xiaomi("http://job.hr.xiaomi.com/#/jobs?page=%d&zhineng=5286&_k=b8ig98"%4)
+    Xiaomi("http://job.hr.xiaomi.com/#/jobs?page=%d&zhineng=5286&_k=b8ig98"%1)
     #urls.append("http://job.hr.xiaomi.com/#/jobs?page=%d&zhineng=5286&_k=b8ig98"%(i+1))
