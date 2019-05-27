@@ -1,23 +1,24 @@
 package com.example.capstonedesign_mj;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.w3c.dom.Text;
-import java.util.zip.Inflater;
 
 public class Company_List_4 extends Activity {
+
+    String myJSON;
+
+    private static final String TAG_RESULTS = "result";
+    private static final String TAG_ID = "id";
+    private static final String TAG_NAME = "name";
+    private static final String TAG_ADD = "address";
+
 
     protected void onCreate(Bundle savedInstanceState){
 
@@ -25,36 +26,8 @@ public class Company_List_4 extends Activity {
         setContentView(R.layout.comp_search);
 
         int cnt = 5;
-        int image = R.drawable.noimage;
-        String Tag_Name = "Name";
-        String Tag_Num = "Num";
-
-        //어느나라 기업인지 보여주는 코드
-        final TextView domain = (TextView)findViewById(R.id.domain);
-        Intent intent = getIntent();
-        final int code = intent.getExtras().getInt("code");
-
-        switch(code)
-        {
-            case 1:
-                domain.setText("<국내 100대 대기업 목록>");
-                break;
-            case 2:
-                domain.setText("<국내 400대 벤처기업 목록>");
-                break;
-            case 3:
-                domain.setText("<미국 100대 기업 목록>");
-                break;
-            case 4:
-                domain.setText("<일본 100대 기업 목록>");
-                break;
-            case 5:
-                domain.setText("<중국 100대 기업 목록>");
-                break;
-        }
-
-        //기업 목록 생성
-        LinearLayout company_list = (LinearLayout)findViewById(R.id.company_list);
+        int image[] = new int[cnt];
+        image[0] = R.drawable.noimage;
 
         //객체생성
         LinearLayout comp_frame[] = new LinearLayout[cnt];
@@ -68,6 +41,67 @@ public class Company_List_4 extends Activity {
         TextView comp_area[] = new TextView[cnt];
         TextView comp_salary[] = new TextView[cnt];
         Button comp_bookmark[] = new Button[cnt];
+
+        String name[] = new String[cnt];
+        String field[] = new String[cnt];
+        String area[] = new String[cnt];
+        String salary[] = new String[cnt];
+
+        //어느나라 기업인지 보여주는 코드
+        final TextView domain = (TextView)findViewById(R.id.domain);
+        Intent intent = getIntent();
+        final int code = intent.getExtras().getInt("code");
+
+        switch(code)
+        {
+            case 1:
+                domain.setText("<국내 100대 대기업 목록>");
+                image[0] = R.drawable.samsung;
+                name[0] = "삼성";
+                field[0] = "통합";
+                area[0] = "서울";
+                salary[0] = "1억원";
+                break;
+            case 2:
+                domain.setText("<국내 400대 벤처기업 목록>");
+                image[0] = R.drawable.wonderful;
+                name[0] = "원더풀 플랫폼";
+                field[0] = "머신러닝";
+                area[0] = "서울 서초구";
+                salary[0] = "5000만원";
+                break;
+            case 3:
+                domain.setText("<미국 100대 기업 목록>");
+                image[0] = R.drawable.google_icon;
+                name[0] = "Google";
+                field[0] = "integrated";
+                area[0] = "California";
+                salary[0] = "1억 6500만원";
+                break;
+            case 4:
+                domain.setText("<일본 100대 기업 목록>");
+                image[0] = R.drawable.noimage;
+                break;
+            case 5:
+                domain.setText("<중국 100대 기업 목록>");
+                image[0] = R.drawable.xiaomi;
+                name[0] = "小米";
+                field[0] = "积分";
+                area[0] = "北京（Bei Jing）";
+                salary[0] = "5000만원";
+                break;
+        }
+
+        for (int i=1 ; i<cnt; i++){
+            image[i] = R.drawable.noimage;
+            name[i] = "기업 " + i;
+            field[i] = "분야 " + i;
+            area[i] = "지역 " + i;
+            salary[i] = "평균연봉 " + i;
+        }
+
+        //기업 목록 생성
+        LinearLayout company_list = (LinearLayout)findViewById(R.id.company_list);
 
         //레이아웃 생성
 
@@ -138,7 +172,7 @@ public class Company_List_4 extends Activity {
             company_list.addView(comp_frame[i], big_param);
 
             comp_image[i] = new ImageView(this);
-            comp_image[i].setImageResource(image);
+            comp_image[i].setImageResource(image[i]);
             comp_frame[i].addView(comp_image[i], img_param);
 
             text_frame[i] = new LinearLayout(this);
@@ -151,7 +185,7 @@ public class Company_List_4 extends Activity {
 
 
             comp_name[i] = new TextView(this);
-            comp_name[i].setText("기업명 "+""+i);
+            comp_name[i].setText(name[i]);
             comp_name[i].setTextSize(21);
             comp_name[i].setGravity(Gravity.CENTER);
             sub_frame1[i].addView(comp_name[i], name_param);
@@ -163,7 +197,7 @@ public class Company_List_4 extends Activity {
             sub_frame1[i].addView(slash[i],slash_param);
 
             comp_field[i] = new TextView(this);
-            comp_field[i].setText("분야 "+""+i);
+            comp_field[i].setText(field[i]);
             comp_field[i].setTextSize(21);
             comp_field[i].setGravity(Gravity.CENTER);
             sub_frame1[i].addView(comp_field[i], field_param);
@@ -173,13 +207,13 @@ public class Company_List_4 extends Activity {
             text_frame[i].addView(sub_frame2[i],sub2_param);
 
             comp_area[i] = new TextView(this);
-            comp_area[i].setText("지역 "+""+i);
+            comp_area[i].setText(area[i]);
             comp_area[i].setTextSize(20);
             comp_area[i].setGravity(Gravity.CENTER);
             sub_frame2[i].addView(comp_area[i], area_param);
 
             comp_salary[i] = new TextView(this);
-            comp_salary[i].setText("평균연봉 "+""+i);
+            comp_salary[i].setText(salary[i]);
             comp_salary[i].setTextSize(20);
             comp_salary[i].setGravity(Gravity.CENTER);
             sub_frame2[i].addView(comp_salary[i], salary_param);

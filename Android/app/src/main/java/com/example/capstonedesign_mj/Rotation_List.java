@@ -32,22 +32,58 @@ public class Rotation_List extends Activity {
         rand.setSeed(date);
 
         //
-        int image = R.drawable.noimage;
 
         final TextView rotation = (TextView)findViewById(R.id.rotation);
         Intent intent = getIntent();
         final int code = intent.getExtras().getInt("code");
 
+        int image[] = new int[cnt];
+        image[0] = R.drawable.noimage;
+        String name[] = new String[cnt];
+        String field[] = new String[cnt];
+        String area[] = new String[cnt];
+        String salary[] = new String[cnt];
+
         switch(code)
         {
             case 1: case 2:
                 rotation.setText("금일의 국내 기업 로테이션");
+                image[0] = R.drawable.samsung;
+                name[0] = "삼성";
+                field[0] = "통합";
+                area[0] = "서울";
+                salary[0] = "1억원";
 
+                image[1] = R.drawable.wonderful;
+                name[1] = "원더풀 플랫폼";
+                field[1] = "머신러닝";
+                area[1] = "서울 서초구";
+                salary[1] = "5000만원";
                 break;
             case 3: case 4: case 5:
                 rotation.setText("금일의 해외 기업 로테이션");
+                image[0] = R.drawable.google_icon;
+                name[0] = "Google";
+                field[0] = "integrated";
+                area[0] = "California";
+                salary[0] = "1억 6500만원";
+
+                image[1] = R.drawable.xiaomi;
+                name[1] = "小米";
+                field[1] = "积分";
+                area[1] = "北京（Bei Jing）";
+                salary[1] = "5000만원";
                 break;
         }
+
+        for (int i=2 ; i<cnt; i++){
+            image[i] = R.drawable.noimage;
+            name[i] = "기업 " + i;
+            field[i] = "분야 " + i;
+            area[i] = "지역 " + i;
+            salary[i] = "평균연봉 " + i;
+        }
+
 
 
 
@@ -143,7 +179,7 @@ public class Rotation_List extends Activity {
             company_list.addView(comp_frame[i], big_param);
 
             comp_image[i] = new ImageView(this);
-            comp_image[i].setImageResource(image);
+            comp_image[i].setImageResource(image[i]);
             comp_frame[i].addView(comp_image[i], img_param);
 
             text_frame[i] = new LinearLayout(this);
@@ -156,7 +192,7 @@ public class Rotation_List extends Activity {
 
 
             comp_name[i] = new TextView(this);
-            comp_name[i].setText("기업명 "+""+i);
+            comp_name[i].setText(name[i]);
             comp_name[i].setTextSize(21);
             comp_name[i].setGravity(Gravity.CENTER);
             sub_frame1[i].addView(comp_name[i], name_param);
@@ -168,7 +204,7 @@ public class Rotation_List extends Activity {
             sub_frame1[i].addView(slash[i],slash_param);
 
             comp_field[i] = new TextView(this);
-            comp_field[i].setText("분야 "+""+i);
+            comp_field[i].setText(field[i]);
             comp_field[i].setTextSize(21);
             comp_field[i].setGravity(Gravity.CENTER);
             sub_frame1[i].addView(comp_field[i], field_param);
@@ -178,13 +214,13 @@ public class Rotation_List extends Activity {
             text_frame[i].addView(sub_frame2[i],sub2_param);
 
             comp_area[i] = new TextView(this);
-            comp_area[i].setText("지역 "+""+i);
+            comp_area[i].setText(area[i]);
             comp_area[i].setTextSize(20);
             comp_area[i].setGravity(Gravity.CENTER);
             sub_frame2[i].addView(comp_area[i], area_param);
 
             comp_salary[i] = new TextView(this);
-            comp_salary[i].setText("평균연봉 "+""+i);
+            comp_salary[i].setText(salary[i]);
             comp_salary[i].setTextSize(20);
             comp_salary[i].setGravity(Gravity.CENTER);
             sub_frame2[i].addView(comp_salary[i], salary_param);
