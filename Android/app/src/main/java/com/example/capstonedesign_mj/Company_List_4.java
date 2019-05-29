@@ -164,7 +164,7 @@ public class Company_List_4 extends Activity {
                 public void onClick(View view) {
                     Intent intent = new Intent(getApplicationContext(), Job_List_5.class);
                     intent.putExtra("code",code);
-                    intent.putExtra("test", test[position] );
+                    intent.putExtra("code2", position);
                     startActivity(intent);
                 }
 
