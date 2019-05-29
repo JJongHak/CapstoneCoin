@@ -1,33 +1,93 @@
 package com.example.capstonedesign_mj;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Company_List_4 extends Activity {
+import java.util.Random;
 
-    String myJSON;
-
-    private static final String TAG_RESULTS = "result";
-    private static final String TAG_ID = "id";
-    private static final String TAG_NAME = "name";
-    private static final String TAG_ADD = "address";
+public class Rotation_List extends Activity {
 
 
-    protected void onCreate(Bundle savedInstanceState){
-
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.comp_search);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.style_company);
+
 
         int cnt = 5;
+        int k[] = new int[cnt];
+        //랜덤
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        int date = cal.get ( cal.DATE ) ;
+        Random rand = new Random();
+        rand.setSeed(date);
+
+        //
+
+        final TextView rotation = (TextView)findViewById(R.id.rotation);
+        Intent intent = getIntent();
+        final int code = intent.getExtras().getInt("code");
+
         int image[] = new int[cnt];
         image[0] = R.drawable.noimage;
+        String name[] = new String[cnt];
+        String field[] = new String[cnt];
+        String area[] = new String[cnt];
+        String salary[] = new String[cnt];
+
+        switch(code)
+        {
+            case 1: case 2:
+                rotation.setText("금일의 국내 기업 로테이션");
+                image[0] = R.drawable.samsung;
+                name[0] = "삼성";
+                field[0] = "통합";
+                area[0] = "서울";
+                salary[0] = "1억원";
+
+                image[1] = R.drawable.wonderful;
+                name[1] = "원더풀 플랫폼";
+                field[1] = "머신러닝";
+                area[1] = "서울 서초구";
+                salary[1] = "5000만원";
+                break;
+            case 3: case 4: case 5:
+                rotation.setText("금일의 해외 기업 로테이션");
+                image[0] = R.drawable.google_icon;
+                name[0] = "Google";
+                field[0] = "integrated";
+                area[0] = "California";
+                salary[0] = "1억 6500만원";
+
+                image[1] = R.drawable.xiaomi;
+                name[1] = "小米";
+                field[1] = "积分";
+                area[1] = "北京（Bei Jing）";
+                salary[1] = "5000만원";
+                break;
+        }
+
+        for (int i=2 ; i<cnt; i++){
+            image[i] = R.drawable.noimage;
+            name[i] = "기업 " + i;
+            field[i] = "분야 " + i;
+            area[i] = "지역 " + i;
+            salary[i] = "평균연봉 " + i;
+        }
+
+
+
+
+        LinearLayout company_list = (LinearLayout)findViewById(R.id.list);
 
         //객체생성
         LinearLayout comp_frame[] = new LinearLayout[cnt];
@@ -41,67 +101,6 @@ public class Company_List_4 extends Activity {
         TextView comp_area[] = new TextView[cnt];
         TextView comp_salary[] = new TextView[cnt];
         Button comp_bookmark[] = new Button[cnt];
-
-        String name[] = new String[cnt];
-        String field[] = new String[cnt];
-        String area[] = new String[cnt];
-        String salary[] = new String[cnt];
-
-        //어느나라 기업인지 보여주는 코드
-        final TextView domain = (TextView)findViewById(R.id.domain);
-        Intent intent = getIntent();
-        final int code = intent.getExtras().getInt("code");
-
-        switch(code)
-        {
-            case 1:
-                domain.setText("<국내 100대 대기업 목록>");
-                image[0] = R.drawable.samsung;
-                name[0] = "삼성";
-                field[0] = "통합";
-                area[0] = "서울";
-                salary[0] = "1억원";
-                break;
-            case 2:
-                domain.setText("<국내 400대 벤처기업 목록>");
-                image[0] = R.drawable.wonderful;
-                name[0] = "원더풀 플랫폼";
-                field[0] = "머신러닝";
-                area[0] = "서울 서초구";
-                salary[0] = "5000만원";
-                break;
-            case 3:
-                domain.setText("<미국 100대 기업 목록>");
-                image[0] = R.drawable.google_icon;
-                name[0] = "Google";
-                field[0] = "integrated";
-                area[0] = "California";
-                salary[0] = "1억 6500만원";
-                break;
-            case 4:
-                domain.setText("<일본 100대 기업 목록>");
-                image[0] = R.drawable.noimage;
-                break;
-            case 5:
-                domain.setText("<중국 100대 기업 목록>");
-                image[0] = R.drawable.xiaomi;
-                name[0] = "小米";
-                field[0] = "积分";
-                area[0] = "北京（Bei Jing）";
-                salary[0] = "5000만원";
-                break;
-        }
-
-        for (int i=1 ; i<cnt; i++){
-            image[i] = R.drawable.noimage;
-            name[i] = "기업 " + i;
-            field[i] = "분야 " + i;
-            area[i] = "지역 " + i;
-            salary[i] = "평균연봉 " + i;
-        }
-
-        //기업 목록 생성
-        LinearLayout company_list = (LinearLayout)findViewById(R.id.company_list);
 
         //레이아웃 생성
 
@@ -153,9 +152,17 @@ public class Company_List_4 extends Activity {
         final int test[] = {1,2,3,4,5};
 
         //기업 생성
-       for(int i=0;i<cnt;i++) {
+        for(int j=0;j<cnt;j++) {
+            //랜덤 번호 생성 및 중복 제거
+            int i = rand.nextInt(cnt);
 
-           final int position = i;
+            for(int a = 0 ; a<j;a++){
+                if(k[a] == i){
+                    a=-1;
+                    i = rand.nextInt(cnt);
+                }
+            }
+            final int position = i;
 
             comp_frame[i] = new LinearLayout(this);
             comp_frame[i].setOrientation(LinearLayout.HORIZONTAL);
@@ -164,7 +171,7 @@ public class Company_List_4 extends Activity {
                 public void onClick(View view) {
                     Intent intent = new Intent(getApplicationContext(), Job_List_5.class);
                     intent.putExtra("code",code);
-                    intent.putExtra("code2", position);
+                    intent.putExtra("test", test[position] );
                     startActivity(intent);
                 }
 
@@ -222,49 +229,12 @@ public class Company_List_4 extends Activity {
             comp_bookmark[i].setText("☆");
             comp_bookmark[i].setTextSize(30);
             comp_frame[i].addView(comp_bookmark[i], but_param);
+
+            k[j] = i;
         }
-
     }
-
-    public void logout(View view){
-        Intent intent = new Intent(getApplicationContext(), Login_1.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
-
     public int DtS(double DP){ //DP -> 픽셀 변환
         double SP = DP*(getResources().getDisplayMetrics().density);
         return (int)SP;
     }
-
-    public void Pop(View view){
-        Intent intent = getIntent();
-        final int code = intent.getExtras().getInt("code");
-
-       intent = new Intent(getApplicationContext(), Rotation_List.class);
-        switch(code)
-        {
-            case 1:
-                intent.putExtra("code",1);
-                startActivity(intent);
-                break;
-            case 2:
-                intent.putExtra("code",2);
-                startActivity(intent);
-                break;
-            case 3:
-                intent.putExtra("code",3);
-                startActivity(intent);
-                break;
-            case 4:
-                intent.putExtra("code",4);
-                startActivity(intent);
-                break;
-            case 5:
-                intent.putExtra("code",5);
-                startActivity(intent);
-                break;
-        }
-    }
-
 }
