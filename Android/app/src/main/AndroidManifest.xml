@@ -25,7 +25,7 @@
         <activity android:name=".Rotation_List"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
         />
+        <activity android:name=".test" />
     </application>
-
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

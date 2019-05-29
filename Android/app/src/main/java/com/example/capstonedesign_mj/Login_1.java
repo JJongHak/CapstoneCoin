@@ -18,7 +18,7 @@ public class Login_1 extends Activity {
         * true, false
         * */
 
-        Intent intent = new Intent(getApplicationContext(), Main_Menu_2.class);
+        Intent intent = new Intent(getApplicationContext(), test.class);
 
         startActivity(intent);
 
