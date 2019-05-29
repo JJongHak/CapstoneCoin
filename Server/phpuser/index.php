@@ -1,5 +1,5 @@
 <?php
 
-print("Capstone Coin SERVER")
+print("Capstone Coin SERVER  Hello")
 
 ?>

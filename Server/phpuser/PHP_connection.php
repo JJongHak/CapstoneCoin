@@ -1,6 +1,6 @@
 <?php
 
-$con=mysqli_connect("localhost","root","","capstone");
+$con=mysqli_connect("localhost","root","","yoohyeok");
 
 if (mysqli_connect_errno($con))
 {
@@ -9,12 +9,12 @@ if (mysqli_connect_errno($con))
 
 mysqli_set_charset($con,"utf8");
 
-$res = mysqli_query($con,"select * from google_table");
+$res = mysqli_query($con,"select * from HumanInfo");
 
 $result = array();
 
 while($row = mysqli_fetch_array($res)){
-	array_push($result,array('title'=>$row[0],'classify'=>$row[1],'address'=>$row[2], 'url'=>$row[3]));
+	array_push($result,array('id'=>$row[0],'name'=>$row[1],'address'=>$row[2]));
 }
 
 echo json_encode(array("result"=>$result));
@@ -22,4 +22,3 @@ echo json_encode(array("result"=>$result));
 mysqli_close($con);
 
 ?>
-
