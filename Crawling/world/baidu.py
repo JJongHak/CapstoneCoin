@@ -22,9 +22,9 @@ def Baidu(url):
         for i in range(len(s5)):
             data.append((s5[i].text).strip() + "\r\n")
         f.write(link + "\r\n")
-    curs = conn.cursor()
-    sql = "INSERT INTO capstone.google_table values('" + data[0] + "','" + data[1] + "','" + data[2] + "','" + data[3] + "','" + data[4] + "','" + link + "');"
-    curs.execute(sql)
+        curs = conn.cursor()
+        sql = "INSERT INTO capstone.google_table values('" + data[0] + "','" + data[1] + "','" + data[2] + "','" + data[3] + "','" + data[4] + "','" + link + "');"
+        curs.execute(sql)
     conn.commit()
 
 url = "https://talent.baidu.com/external/baidu/index.html#/social/2"
