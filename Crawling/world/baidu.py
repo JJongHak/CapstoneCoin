@@ -3,11 +3,11 @@ from selenium import webdriver
 import codecs
 import pymysql
 
-f = codecs.open("C:/Users/gooni/Documents/캡스톤디자인/link.txt", encoding="utf-8",mode="w")
-driver = webdriver.Chrome("C:/Users/gooni/Documents/캡스톤디자인/chromedriver.exe")
+#f = codecs.open("C:/Users/gooni/Documents/캡스톤디자인/link.txt", encoding="utf-8",mode="w")
+driver = webdriver.Chrome("C:/Users/LJH/Documents/GitHub/CapstoneCoin/Crawling/world/chromedriver.exe")
 
 def Baidu(url):
-    conn = pymysql.connect(host='localhost', user='root', password='Capstone123.',
+    conn = pymysql.connect(host='localhost', user='root',
                            db='capstone', charset='utf8')
     driver.get(url)
     s1 = driver.page_source
@@ -20,14 +20,14 @@ def Baidu(url):
         link = "https://talent.baidu.com/external/baidu/index.html" + s6['href']
 
         for i in range(len(s5)):
-            data.append((s5[i].text).strip() + "\r\n")
-        f.write(link + "\r\n")
+            data.append((s5[i].text).strip() )
+        #f.write(link + "\r\n")
         curs = conn.cursor()
-        sql = "INSERT INTO capstone.google_table values('" + data[0] + "','" + data[1] + "','" + data[2] + "','" + data[3] + "','" + data[4] + "','" + link + "');"
+        sql = "INSERT INTO capstone.baidu_table values('" + data[0] + "','" + data[1] + "','" + data[2] + "','" + data[3] + "','" + data[4] + "','" + link + "');"
         curs.execute(sql)
     conn.commit()
 
 url = "https://talent.baidu.com/external/baidu/index.html#/social/2"
 Baidu(url)
 
-f.close()
+#f.close()

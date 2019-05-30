@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9769e2b7-b291-41dc-8fac-d06c30e42227" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Android/app/src/main/java/com/example/capstonedesign_mj/Login_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/app/src/main/java/com/example/capstonedesign_mj/Login_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/app/src/main/res/layout/login_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/app/src/main/res/layout/login_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google.py" beforeDir="false" afterPath="$PROJECT_DIR$/google.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaomi.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaomi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDi.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiDi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baidu.py" beforeDir="false" afterPath="$PROJECT_DIR$/baidu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Server/xampp/xampp-control.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Server/xampp/xampp-control.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +18,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaomi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="18" column="57" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="57" />
+            <state relative-caret-position="325">
+              <caret line="18" column="57" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/google.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="103" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiDi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="39" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -28,10 +52,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/google.py">
+        <entry file="file://$PROJECT_DIR$/baidu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="318">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -49,12 +73,14 @@
       <list>
         <option value="$PROJECT_DIR$/xiaomi.py" />
         <option value="$PROJECT_DIR$/google.py" />
+        <option value="$PROJECT_DIR$/DiDi.py" />
+        <option value="$PROJECT_DIR$/baidu.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="565" />
-    <option name="y" value="77" />
+    <option name="x" value="539" />
+    <option name="y" value="3" />
     <option name="width" value="1300" />
     <option name="height" value="1047" />
   </component>
@@ -64,7 +90,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -76,6 +101,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -94,7 +120,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.google">
+  <component name="RunManager" selected="Python.baidu">
+    <configuration name="DiDi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="world" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DiDi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="baidu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="world" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baidu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="google" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="world" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,6 +207,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.baidu" />
+        <item itemvalue="Python.DiDi" />
         <item itemvalue="Python.google" />
         <item itemvalue="Python.xiaomi" />
       </list>
@@ -158,14 +228,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="565" y="77" width="1300" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960381" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16596417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32968238" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3264642" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -182,8 +253,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/xiaomi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="18" column="57" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="57" />
+        <state relative-caret-position="325">
+          <caret line="18" column="57" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="57" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -192,8 +263,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/google.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="75">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="103" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiDi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baidu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>

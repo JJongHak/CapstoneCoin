@@ -192,3 +192,24 @@
 오후 4:32:31  [main] 	Deinitializing Modules
 오후 4:32:31  [main] 	Deinitializing Control Panel
 
+오후 9:18:49  [main] 	Initializing Control Panel
+오후 9:18:49  [main] 	Windows Version:  Enterprise  64-bit
+오후 9:18:49  [main] 	XAMPP Version: 7.3.4
+오후 9:18:49  [main] 	Control Panel Version: 3.2.3  [ Compiled: Mar 7th 2019 ]
+오후 9:18:49  [main] 	You are not running with administrator rights! This will work for
+오후 9:18:49  [main] 	most application stuff but whenever you do something with services
+오후 9:18:49  [main] 	there will be a security dialogue or things will break! So think 
+오후 9:18:49  [main] 	about running this application with administrator rights!
+오후 9:18:49  [main] 	XAMPP Installation Directory: "c:\users\ljh\documents\github\capstonecoin\server\xampp\"
+오후 9:18:49  [main] 	Checking for prerequisites
+오후 9:18:52  [main] 	All prerequisites found
+오후 9:18:52  [main] 	Initializing Modules
+오후 9:18:52  [main] 	Starting Check-Timer
+오후 9:18:52  [main] 	Control Panel Ready
+오후 9:18:54  [Apache] 	Attempting to start Apache app...
+오후 9:18:54  [Apache] 	Status change detected: running
+오후 9:18:55  [mysql] 	Attempting to start MySQL app...
+오후 9:18:56  [mysql] 	Status change detected: running
+오후 9:47:07  [main] 	Deinitializing Modules
+오후 9:47:07  [main] 	Deinitializing Control Panel
+
