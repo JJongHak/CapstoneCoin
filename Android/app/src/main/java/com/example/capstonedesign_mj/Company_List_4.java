@@ -12,6 +12,13 @@ import android.widget.TextView;
 
 public class Company_List_4 extends Activity {
 
+    private static int num =1;
+
+    private static String name[] = new String[5];
+    private static String field[] = new String[5];
+    private static String area[] = new String[5];
+    private static String salary[] = new String[5];
+
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
@@ -34,10 +41,6 @@ public class Company_List_4 extends Activity {
         TextView comp_salary[] = new TextView[cnt];
         Button comp_bookmark[] = new Button[cnt];
 
-        String name[] = new String[cnt];
-        String field[] = new String[cnt];
-        String area[] = new String[cnt];
-        String salary[] = new String[cnt];
 
         //어느나라 기업인지 보여주는 코드
         final TextView domain = (TextView)findViewById(R.id.domain);
@@ -52,15 +55,19 @@ public class Company_List_4 extends Activity {
                 name[0] = "삼성";
                 field[0] = "통합IT";
                 area[0] = "32만 명";
-                salary[0] = "1억원";
+                salary[0] = "4000만 원";
+
+                num=1;
                 break;
             case 2:
                 domain.setText("<국내 400대 벤처기업 목록>");
                 image[0] = R.drawable.wonderful;
                 name[0] = "원더풀 플랫폼";
-                field[0] = "머신러닝";
+                field[0] = "머신러닝,AI";
                 area[0] = "40 명";
-                salary[0] = "5000만원";
+                salary[0] = "3300만 원";
+
+                num=1;
                 break;
             case 3:
                 domain.setText("<미국 100대 기업 목록>");
@@ -68,11 +75,26 @@ public class Company_List_4 extends Activity {
                 name[0] = "Google";
                 field[0] = "integrated IT";
                 area[0] = "10만 명";
-                salary[0] = "1억 6500만원";
+                salary[0] = "1억 3000만 원";
+
+                image[1] = R.drawable.facebook;
+                name[1] = "Facebook";
+                field[1] = "integrated IT";
+                area[1] = "3만 명";
+                salary[1] = "1억 2000만원";
+
+                image[2] = R.drawable.cisco;
+                name[2] = "Cisco";
+                field[2] = "Network System";
+                area[2] = "7만 명";
+                salary[2] = "7000만원";
+
+                num=3;
                 break;
             case 4:
                 domain.setText("<일본 100대 기업 목록>");
                 image[0] = R.drawable.noimage;
+                num=0;
                 break;
             case 5:
                 domain.setText("<중국 100대 기업 목록>");
@@ -80,11 +102,25 @@ public class Company_List_4 extends Activity {
                 name[0] = "小米";
                 field[0] = "积分";
                 area[0] = "1.7만 명";
-                salary[0] = "5000만원";
+                salary[0] = "3100만원";
+
+                image[1] = R.drawable.didi;
+                name[1] = "滴滴";
+                field[1] = "艺术";
+                area[1] = "7천 명";
+                salary[1] = "4550만원";
+
+                image[2] = R.drawable.vivo;
+                name[2] = "Vivo";
+                field[2] = "发展";
+                area[2] = "1만 명";
+                salary[2] = "2500만원";
+
+                num=3;
                 break;
         }
 
-        for (int i=1 ; i<cnt; i++){
+        for (int i=num; i<cnt; i++){
             image[i] = R.drawable.noimage;
             name[i] = "기업 " + i;
             field[i] = "분야 " + i;

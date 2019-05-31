@@ -3,6 +3,7 @@ package com.example.capstonedesign_mj;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -36,9 +37,13 @@ public class Job_List_5 extends Activity {
     private static String TAG_2 = "classify";
     private static String TAG_3 = "type";
     private static String TAG_4 = "date";
-    private static String TAG_5 = "five";
+    private static String TAG_5 = null;
     private static String TAG_6 = "six";
     private static String url = "210.115.229.135";
+
+    private static String Tag_array[];
+    private static int layer_view[];
+    private static boolean check = false;
 
 
     JSONArray peoples = null;
@@ -92,41 +97,36 @@ public class Job_List_5 extends Activity {
 
             for (int i = 0; i < peoples.length(); i++) {
                 JSONObject c = peoples.getJSONObject(i);
-                String view1 = c.getString(TAG_1);
-                String view2 = c.getString(TAG_2);
-                String view3 = c.getString(TAG_3);
-                String view4 = c.getString(TAG_4);
-                String view5 = c.getString(TAG_5);
+                String view[] = new String[Tag_array.length];
 
+                for (int j = 0; j< Tag_array.length; j++) {
+                    view[j] = c.getString(Tag_array[j]);
+                }
 
-                link[i] = view5;
-
+                if (check == true) {
+                    link[i] = c.getString(TAG_6);
+                }
                 HashMap<String, String> persons = new HashMap<String, String>();
 
-                persons.put(TAG_1, view1);
-                persons.put(TAG_2, view2);
-                persons.put(TAG_3, view3);
-                persons.put(TAG_4, view4);
-                persons.put(TAG_5, view5);
-
-
+                for (int j = 0; j< Tag_array.length; j++) {
+                    persons.put(Tag_array[j],view[j]);
+                }
                 personList.add(persons);
             }
 
             ListAdapter adapter = new SimpleAdapter(
-                    Job_List_5.this, personList, R.layout.style_notice2,
-                    new String[]{TAG_1, TAG_2, TAG_3, TAG_4, TAG_5},
-                    new int[]{R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5}
-            );
+                    Job_List_5.this, personList, R.layout.style_notice2, Tag_array, layer_view);
 
             list.setAdapter(adapter);
-            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link[i]));
-                    startActivity(intent);
-                }
-            });
+            if(check == true) {
+                list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link[i]));
+                        startActivity(intent);
+                    }
+                });
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -183,31 +183,124 @@ public class Job_List_5 extends Activity {
                 TAG_4 = "s_date";
                 TAG_5 = "e_date";
                 url = "http://210.115.229.135/samsung.php";
+                Tag_array = new String[]{TAG_1,TAG_2,TAG_3,TAG_4,TAG_5};
+                layer_view = new int[]{R.id.view1,R.id.view2,R.id.view3,R.id.view4,R.id.view5};
+                check = false;
                 break;
             case "원더풀 플랫폼":
                 TAG_1 = "classify";
                 TAG_2 = "c_name";
                 TAG_3 = "title";
                 TAG_4 = "s_date";
-                TAG_5 = "e_date";
+                TAG_6 = "e_date";
                 url = "http://210.115.229.135/venture.php";
+                Tag_array = new String[]{TAG_1,TAG_2,TAG_3,TAG_4};
+                layer_view = new int[]{R.id.view1,R.id.view2,R.id.view3,R.id.view4};
+                check = true;
                 break;
             case "Google":
                 TAG_1 = "title";
                 TAG_2 = "classify";
                 TAG_3 = "address";
-                TAG_4 = "url";
+                TAG_6 = "url";
                 url = "http://210.115.229.135/google.php";
+                Tag_array = new String[]{TAG_1,TAG_2,TAG_3};
+                layer_view = new int[]{R.id.view1,R.id.view2,R.id.view3};
+                check = true;
                 break;
             case "小米":
                 TAG_1 = "title";
                 TAG_2 = "classify";
                 TAG_3 = "type";
                 TAG_4 = "date";
-                TAG_5 = "link";
+                TAG_6 = "link";
                 url = "http://210.115.229.135/xiaomi.php";
+                Tag_array = new String[]{TAG_1,TAG_2,TAG_3,TAG_4};
+                layer_view = new int[]{R.id.view1,R.id.view2,R.id.view3,R.id.view4};
+                check = true;
                 break;
+            case "Facebook":
+                TAG_1 = "title";
+                TAG_2 = "classify";
+                TAG_3 = "address";
+                TAG_6 = "link";
+                url = "http://210.115.229.135/facebook.php";
+                Tag_array = new String[]{TAG_1,TAG_2,TAG_3};
+                layer_view = new int[]{R.id.view1,R.id.view2,R.id.view3};
+                check = true;
+                break;
+            case "滴滴":
+                TAG_1 = "title";
+                TAG_2 = "classify";
+                TAG_3 = "type";
+                TAG_4 = "address";
+                TAG_5 = "date";
+                TAG_6 = "link";
+                url = "http://210.115.229.135/didi.php";
+                Tag_array = new String[]{TAG_1,TAG_2,TAG_3,TAG_4,TAG_5};
+                layer_view = new int[]{R.id.view1,R.id.view2,R.id.view3,R.id.view4,R.id.view5};
+                check = true;
+            case "Vivo":
+                TAG_1 = "title";
+                TAG_2 = "classify";
+                TAG_3 = "num";
+                TAG_4 = "date";
+                TAG_6 = "link";
+                url = "http://210.115.229.135/vivo.php";
+                Tag_array = new String[]{TAG_1,TAG_2,TAG_3,TAG_4};
+                layer_view = new int[]{R.id.view1,R.id.view2,R.id.view3,R.id.view4};
+                check = true;
+                break;
+            case "Cisco":
+                TAG_1 = "title";
+                TAG_2 = "classify";
+                TAG_3 = "type";
+                TAG_4 = "address";
+                TAG_6 = "link";
+                url = "http://210.115.229.135/cisco.php";
+                Tag_array = new String[]{TAG_1,TAG_2,TAG_3,TAG_4};
+                layer_view = new int[]{R.id.view1,R.id.view2,R.id.view3,R.id.view4};
+                check = true;
+                break;
+            default:
+
         }
         return url;
+    }
+
+    public void Pop(View view){
+        Intent intent = getIntent();
+        final int code = intent.getExtras().getInt("code");
+
+        intent = new Intent(getApplicationContext(), Rotation_List.class);
+        switch(code)
+        {
+            case 1:
+                intent.putExtra("code",1);
+                startActivity(intent);
+                break;
+            case 2:
+                intent.putExtra("code",2);
+                startActivity(intent);
+                break;
+            case 3:
+                intent.putExtra("code",3);
+                startActivity(intent);
+                break;
+            case 4:
+                intent.putExtra("code",4);
+                startActivity(intent);
+                break;
+            case 5:
+                intent.putExtra("code",5);
+                startActivity(intent);
+                break;
+        }
+    }
+
+    public void logout(View view){
+        Intent intent = new Intent(getApplicationContext(), Login_1.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }

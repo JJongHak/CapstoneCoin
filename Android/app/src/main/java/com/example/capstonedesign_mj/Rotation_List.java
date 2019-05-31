@@ -16,14 +16,14 @@ import java.util.Random;
 
 public class Rotation_List extends Activity {
 
-
+    private static int num =1;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.style_company);
 
 
-        int cnt = 5;
+        int cnt = 10;
         int k[] = new int[cnt];
         //랜덤
         java.util.Calendar cal = java.util.Calendar.getInstance();
@@ -50,33 +50,61 @@ public class Rotation_List extends Activity {
                 rotation.setText("금일의 국내 기업 로테이션");
                 image[0] = R.drawable.samsung;
                 name[0] = "삼성";
-                field[0] = "통합";
-                area[0] = "서울";
-                salary[0] = "1억원";
+                field[0] = "통합IT";
+                area[0] = "32만 명";
+                salary[0] = "4000만 원";
 
                 image[1] = R.drawable.wonderful;
                 name[1] = "원더풀 플랫폼";
-                field[1] = "머신러닝";
-                area[1] = "서울 서초구";
-                salary[1] = "5000만원";
+                field[1] = "머신러닝,AI";
+                area[1] = "40 명";
+                salary[1] = "3300만 원";
+                num=2;
+
                 break;
             case 3: case 4: case 5:
                 rotation.setText("금일의 해외 기업 로테이션");
                 image[0] = R.drawable.google_icon;
                 name[0] = "Google";
-                field[0] = "integrated";
-                area[0] = "California";
-                salary[0] = "1억 6500만원";
+                field[0] = "integrated IT";
+                area[0] = "10만 명";
+                salary[0] = "1억 3000만 원";
 
-                image[1] = R.drawable.xiaomi;
-                name[1] = "小米";
-                field[1] = "积分";
-                area[1] = "北京（Bei Jing）";
-                salary[1] = "5000만원";
+                image[1] = R.drawable.facebook;
+                name[1] = "Facebook";
+                field[1] = "integrated IT";
+                area[1] = "3만 명";
+                salary[1] = "1억 2000만원";
+
+                image[2] = R.drawable.cisco;
+                name[2] = "Cisco";
+                field[2] = "Network System";
+                area[2] = "7만 명";
+                salary[2] = "7000만원";
+
+                image[3] = R.drawable.xiaomi;
+                name[3] = "小米";
+                field[3] = "积分";
+                area[3] = "1.7만 명";
+                salary[3] = "3100만원";
+
+                image[4] = R.drawable.didi;
+                name[4] = "滴滴";
+                field[4] = "艺术";
+                area[4] = "7천 명";
+                salary[4] = "4550만원";
+
+                image[5] = R.drawable.vivo;
+                name[5] = "Vivo";
+                field[5] = "发展";
+                area[5] = "1만 명";
+                salary[5] = "2500만원";
+
+                num=6;
                 break;
         }
 
-        for (int i=2 ; i<cnt; i++){
+        for (int i=num; i<cnt; i++){
             image[i] = R.drawable.noimage;
             name[i] = "기업 " + i;
             field[i] = "분야 " + i;
@@ -152,7 +180,7 @@ public class Rotation_List extends Activity {
         final int test[] = {1,2,3,4,5};
 
         //기업 생성
-        for(int j=0;j<cnt;j++) {
+        for(int j=0;j<5;j++) {
             //랜덤 번호 생성 및 중복 제거
             int i = rand.nextInt(cnt);
 
@@ -163,6 +191,11 @@ public class Rotation_List extends Activity {
                 }
             }
             final int position = i;
+            final int get_image = image[i];
+            final String get_name = name[i];
+            final String get_field = field[i];
+            final String get_area = area[i];
+            final String get_salary = salary[i];
 
             comp_frame[i] = new LinearLayout(this);
             comp_frame[i].setOrientation(LinearLayout.HORIZONTAL);
@@ -172,6 +205,11 @@ public class Rotation_List extends Activity {
                     Intent intent = new Intent(getApplicationContext(), Job_List_5.class);
                     intent.putExtra("code",code);
                     intent.putExtra("test", test[position] );
+                    intent.putExtra("image", get_image);
+                    intent.putExtra("name", get_name);
+                    intent.putExtra("field", get_field);
+                    intent.putExtra("area", get_area);
+                    intent.putExtra("salary", get_salary);
                     startActivity(intent);
                 }
 
