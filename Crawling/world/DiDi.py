@@ -13,8 +13,7 @@ def DiDi(url):
     driver.get(url)
     s1 = driver.page_source
     s2 = BeautifulSoup(s1, "html.parser")
-    s3 = s2.find_all("a", class_="clearfix")
-    print(s3)
+    s3 = s2.findAll("a", class_="clearfix")
     for s4 in s3:
         link = "https://http://talent.didiglobal.com/" + s4['href']
         s5 = s4.find("div", class_="position-card-title")

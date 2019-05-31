@@ -21,6 +21,7 @@ def Baidu(url):
 
         for i in range(len(s5)):
             data.append((s5[i].text).strip() )
+        print(data)
         #f.write(link + "\r\n")
         curs = conn.cursor()
         sql = "INSERT INTO capstone.baidu_table values('" + data[0] + "','" + data[1] + "','" + data[2] + "','" + data[3] + "','" + data[4] + "','" + link + "');"
