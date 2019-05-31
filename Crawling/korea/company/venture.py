@@ -6,8 +6,8 @@ import pymysql
 
 
 def SS():
-    conn = pymysql.connect(host='localhost', user='root', password='t13579',
-                           db='dbclass', charset='utf8')
+    conn = pymysql.connect(host='localhost', user='root',
+                           db='capstone', charset='utf8')
     driver.get("http://www.jobkorea.co.kr/Search/?stext=%EC%9B%90%EB%8D%94%ED%92%80%ED%94%8C%EB%9E%AB%ED%8F%BC")
     s1 = driver.page_source
     s2 = BeautifulSoup(s1, "html.parser")
@@ -81,7 +81,7 @@ def SS():
                     a += 1
 
     curs = conn.cursor()
-    curs.execute("select content, enddate from dbclass.company where companyname LIKE '%원더풀%'")
+    curs.execute("select title from capstone.venture where c_name LIKE '%원더풀%'")
     compare = []
 
     dele = []
@@ -106,21 +106,23 @@ def SS():
         cnt += 1
 
     for i in dele:
-        curs.execute("delete from dbclass.company where content = '" + i + "'")
+        curs.execute("delete from capstone.venture where title = '" + i + "'")
         conn.commit()
-    if len(con) > 0:
-        for j in range(len(car)):
-            link2[j] = "http://www.jobkorea.co.kr/"+link2[j]
-            sql = "insert into dbclass.company values ('" + car2[j] + "', '" + com2[j] + "', '" +con2[j]+ "', '', '" +da2[j]+ "', '" + link2[j] + "');"
+    cnt = 0
+    if len(con2) > 0:
+        for j in range(len(car2)):
+            link2[cnt] = "http://www.jobkorea.co.kr/"+link2[cnt]
+            sql = "insert into capstone.venture values ('" + car2[j] + "', '" + com2[j] + "', '" +con2[j]+ "', '" +da2[j]+ "', '" + link2[cnt] + "');"
             curs.execute(sql)
             conn.commit()
+            cnt += 1
 
 
 
 
 def SamSung():
-    conn = pymysql.connect(host='localhost', user='root', password='t13579',
-                           db='dbclass', charset='utf8')
+    conn = pymysql.connect(host='localhost', user='root',
+                           db='capstone', charset='utf8')
     driver.get("http://www.samsungcareers.com/main.html")
     cont = []
     care = []
@@ -153,7 +155,7 @@ def SamSung():
         edate.append(d[11:21])
         cnt+=1
     curs = conn.cursor()
-    curs.execute("select content from dbclass.company where companyname LIKE '%삼성%' or companyname LIKE '%에스원%'")
+    curs.execute("select title from capstone.samsung where c_name LIKE '%삼성%' or c_name LIKE '%에스원%'")
     compare = []
     dele = []
     while(True):
@@ -177,20 +179,20 @@ def SamSung():
 
 
     for i in dele:
-        curs.execute("delete from dbclass.company where content = '"+i+"'")
+        curs.execute("delete from capstone.samsung where title = '"+i+"'")
         conn.commit()
 
 
     #sql = "SELECT * FROM dbclass.company where companyname LIKE '%"+cont[]+"%';"
     if len(cont2) > 0 :
         for i in range(len(cont2)):
-            sql = "insert into dbclass.company values ('" + care2[i] + "', '" + comp2[i]+ "', '" +cont2[i]+ "', '" +sdate2[i]+ "', '" + edate2[i]+"');"
+            sql = "insert into capstone.samsung values ('" + care2[i] + "', '" + comp2[i]+ "', '" +cont2[i]+ "', '" +sdate2[i]+ "', '" + edate2[i]+"');"
             curs.execute(sql)
             conn.commit()
 
 
 
 
-driver = webdriver.Chrome("C:/Users/SAMSUNG/Desktop/capstone/crawler/chromedriver.exe")
+driver = webdriver.Chrome("C:/Users/LJH/Documents/GitHub/CapstoneCoin/Crawling/korea/chromedriver.exe")
 SS()
 #SamSung()
