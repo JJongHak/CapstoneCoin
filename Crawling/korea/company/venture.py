@@ -49,13 +49,15 @@ def SS():
                             date1 = date[1].split("\n")
                             da.append(date1[0])
                             if '경력' in b2[2]:
-                                car.append('2')
+                                car.append('경력직')
                             elif '신입' in b2[2]:
-                                car.append('1')
+                                car.append('신입')
                             elif '계약' in b2[2]:
-                                car.append('3')
+                                car.append('계약')
                             elif '정규' in b2[2]:
-                                car.append('4')
+                                car.append('정규직')
+                            elif '인턴' in b2[2]:
+                                car.append('인턴')
                         else:
 
                             b1 = b.split("\n")
@@ -143,9 +145,11 @@ def SamSung():
         s5 = s4.find_all("td")
         a = str(s5[1].text)
         if '경력' in a:
-            care.append('2')
-        else:
-            care.append('1')
+            care.append('경력직')
+        elif '신입' in a:
+            care.append('신입')
+        elif '인턴' in a:
+            care.append('인턴')
         b = str(s5[2].text)
         c = str(s5[3].text)
         d = str(s5[4].text)

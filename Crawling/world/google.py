@@ -32,14 +32,15 @@ def Google(url):
                 c = (s5[1].text).strip() + ", " + (s5[2].text).strip()
             else:
                 c = (s5[1].text).strip()
-            d = "https://careers.google.com/" + link
-
+            d = "https://careers.google.com" + link
+            print(d)
             curs = conn.cursor()
             sql = "INSERT INTO capstone.google_table values('" + a + "','" + b + "','" + c + "','" + d + "');"
             curs.execute(sql)
     conn.commit()
 
 #12345
+
 urls = []
 url0 = "https://careers.google.com/jobs/results/?category=DATA_CENTER_OPERATIONS&category=DEVELOPER_RELATIONS&category=HARDWARE\
 _ENGINEERING&category=INFORMATION_TECHNOLOGY&category=MANUFACTURING_SUPPLY_CHAIN&category=NETWORK_ENGINEERING&category=PRODUCT\
