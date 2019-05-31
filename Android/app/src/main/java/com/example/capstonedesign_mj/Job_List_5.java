@@ -31,12 +31,15 @@ public class Job_List_5 extends Activity {
 
     String myJSON;
 
-    private static final String TAG_RESULTS = "result";
-    private static final String TAG_1 = "title";
-    private static final String TAG_2 = "classify";
-    private static final String TAG_3 = "type";
-    private static final String TAG_4 = "date";
-    private static final String TAG_5 = "link";
+    private static String TAG_RESULTS = "result";
+    private static String TAG_1 = "title";
+    private static String TAG_2 = "classify";
+    private static String TAG_3 = "type";
+    private static String TAG_4 = "date";
+    private static String TAG_5 = "five";
+    private static String TAG_6 = "six";
+    private static String url = "210.115.229.135";
+
 
     JSONArray peoples = null;
 
@@ -73,9 +76,11 @@ public class Job_List_5 extends Activity {
         area.setText(comp_area);
         salary.setText(comp_salary);
 
+        String url = comp_url(comp_name);
+
         list = (ListView) findViewById(R.id.listview);
         personList = new ArrayList<HashMap<String, String>>();
-        getData("http://210.115.229.135/xiaomi.php");
+        getData(url);
     }
 
 
@@ -93,6 +98,7 @@ public class Job_List_5 extends Activity {
                 String view4 = c.getString(TAG_4);
                 String view5 = c.getString(TAG_5);
 
+
                 link[i] = view5;
 
                 HashMap<String, String> persons = new HashMap<String, String>();
@@ -103,13 +109,14 @@ public class Job_List_5 extends Activity {
                 persons.put(TAG_4, view4);
                 persons.put(TAG_5, view5);
 
+
                 personList.add(persons);
             }
 
             ListAdapter adapter = new SimpleAdapter(
                     Job_List_5.this, personList, R.layout.style_notice2,
-                    new String[]{TAG_1, TAG_2, TAG_3, TAG_4},
-                    new int[]{R.id.view1, R.id.view2, R.id.view3, R.id.view4}
+                    new String[]{TAG_1, TAG_2, TAG_3, TAG_4, TAG_5},
+                    new int[]{R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5}
             );
 
             list.setAdapter(adapter);
@@ -164,5 +171,43 @@ public class Job_List_5 extends Activity {
         }
         GetDataJSON g = new GetDataJSON();
         g.execute(url);
+    }
+
+    public String comp_url(String name){
+        switch (name)
+        {
+            case "삼성":
+                TAG_1 = "classify";
+                TAG_2 = "c_name";
+                TAG_3 = "title";
+                TAG_4 = "s_date";
+                TAG_5 = "e_date";
+                url = "http://210.115.229.135/samsung.php";
+                break;
+            case "원더풀 플랫폼":
+                TAG_1 = "classify";
+                TAG_2 = "c_name";
+                TAG_3 = "title";
+                TAG_4 = "s_date";
+                TAG_5 = "e_date";
+                url = "http://210.115.229.135/venture.php";
+                break;
+            case "Google":
+                TAG_1 = "title";
+                TAG_2 = "classify";
+                TAG_3 = "address";
+                TAG_4 = "url";
+                url = "http://210.115.229.135/google.php";
+                break;
+            case "小米":
+                TAG_1 = "title";
+                TAG_2 = "classify";
+                TAG_3 = "type";
+                TAG_4 = "date";
+                TAG_5 = "link";
+                url = "http://210.115.229.135/xiaomi.php";
+                break;
+        }
+        return url;
     }
 }
