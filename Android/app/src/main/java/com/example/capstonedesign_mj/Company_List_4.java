@@ -12,14 +12,6 @@ import android.widget.TextView;
 
 public class Company_List_4 extends Activity {
 
-    String myJSON;
-
-    private static final String TAG_RESULTS = "result";
-    private static final String TAG_ID = "id";
-    private static final String TAG_NAME = "name";
-    private static final String TAG_ADD = "address";
-
-
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
@@ -58,8 +50,8 @@ public class Company_List_4 extends Activity {
                 domain.setText("<국내 100대 대기업 목록>");
                 image[0] = R.drawable.samsung;
                 name[0] = "삼성";
-                field[0] = "통합";
-                area[0] = "서울";
+                field[0] = "통합IT";
+                area[0] = "32만 명";
                 salary[0] = "1억원";
                 break;
             case 2:
@@ -67,15 +59,15 @@ public class Company_List_4 extends Activity {
                 image[0] = R.drawable.wonderful;
                 name[0] = "원더풀 플랫폼";
                 field[0] = "머신러닝";
-                area[0] = "서울 서초구";
+                area[0] = "40 명";
                 salary[0] = "5000만원";
                 break;
             case 3:
                 domain.setText("<미국 100대 기업 목록>");
                 image[0] = R.drawable.google_icon;
                 name[0] = "Google";
-                field[0] = "integrated";
-                area[0] = "California";
+                field[0] = "integrated IT";
+                area[0] = "10만 명";
                 salary[0] = "1억 6500만원";
                 break;
             case 4:
@@ -87,7 +79,7 @@ public class Company_List_4 extends Activity {
                 image[0] = R.drawable.xiaomi;
                 name[0] = "小米";
                 field[0] = "积分";
-                area[0] = "北京（Bei Jing）";
+                area[0] = "1.7만 명";
                 salary[0] = "5000만원";
                 break;
         }
@@ -156,6 +148,11 @@ public class Company_List_4 extends Activity {
        for(int i=0;i<cnt;i++) {
 
            final int position = i;
+           final int get_image = image[i];
+           final String get_name = name[i];
+           final String get_field = field[i];
+           final String get_area = area[i];
+           final String get_salary = salary[i];
 
             comp_frame[i] = new LinearLayout(this);
             comp_frame[i].setOrientation(LinearLayout.HORIZONTAL);
@@ -165,6 +162,11 @@ public class Company_List_4 extends Activity {
                     Intent intent = new Intent(getApplicationContext(), Job_List_5.class);
                     intent.putExtra("code",code);
                     intent.putExtra("code2", position);
+                    intent.putExtra("image", get_image);
+                    intent.putExtra("name", get_name);
+                    intent.putExtra("field", get_field);
+                    intent.putExtra("area", get_area);
+                    intent.putExtra("salary", get_salary);
                     startActivity(intent);
                 }
 
